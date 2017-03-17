@@ -30,7 +30,7 @@ public class LcdTest {
     }
 
     @Test
-    public void for_2() {
+    public void for_22() {
         Lcd lcd = new Lcd();
         String result = lcd.displayDigitList(PositiveInteger._22);
         Assertions.assertThat(result).isEqualTo(
