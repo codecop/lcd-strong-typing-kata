@@ -48,11 +48,21 @@ public enum PositiveInteger {
 
   public NonEmptyList<CharZeroToNine> asDigits() {
     char[] digits = name().substring(1).toCharArray();
-    CharZeroToNine first = CharZeroToNine.valueOf("_" + digits[0]); // we know it is not empty
+    
+    CharZeroToNine first = convert(digits[0]); // we know it is not empty
     NonEmptyList<CharZeroToNine> list = new NonEmptyList<CharZeroToNine>(first);
+    
     for (int i = 1; i < digits.length; i++) {
-      list.add(CharZeroToNine.valueOf("_" + digits[i]));
+      list.add(convert(digits[i]));
     }
+    
     return list;
+    
+    // other approach: create builder and add elements. after first add we get back a 
+    // new builder interface which has the build method on it. call it on return.
+  }
+
+  private CharZeroToNine convert(/* c must be 0 to 9 */ char c) {
+    return CharZeroToNine.valueOf("_" + c);
   }
 }
