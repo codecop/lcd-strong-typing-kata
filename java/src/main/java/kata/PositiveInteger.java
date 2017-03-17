@@ -1,9 +1,8 @@
 package kata;
 
-import java.security.GeneralSecurityException;
-
 public enum PositiveInteger {
 
+  _0,
   _1,
   _2,
   _3,
@@ -47,8 +46,13 @@ public enum PositiveInteger {
   _77, 
   _172;
 
-  @Override
-  public String toString() {
-    return name().substring(1);
+  public NonEmptyList<CharZeroToNine> asDigits() {
+    char[] digits = name().substring(1).toCharArray();
+    CharZeroToNine first = CharZeroToNine.valueOf("_" + digits[0]); // we know it is not empty
+    NonEmptyList<CharZeroToNine> list = new NonEmptyList<CharZeroToNine>(first);
+    for (int i = 1; i < digits.length; i++) {
+      list.add(CharZeroToNine.valueOf("_" + digits[i]));
+    }
+    return list;
   }
 }

@@ -5,10 +5,10 @@ import java.util.*;
 public class Lcd {
 
     @SuppressWarnings("serial")
-    private Map<Character, Digit> possibleDigits = new HashMap<Character, Digit>() {{
-        put('1', new Digit("   ", "  |", "  |"));
-        put('2', new Digit(" _ ", " _|", "|_ "));
-        put('7', new Digit(" _ ", "  |", "  |"));
+    private Map<CharZeroToNine, Digit> possibleDigits = new HashMap<CharZeroToNine, Digit>() {{
+        put(CharZeroToNine._1, new Digit("   ", "  |", "  |"));
+        put(CharZeroToNine._2, new Digit(" _ ", " _|", "|_ "));
+        put(CharZeroToNine._7, new Digit(" _ ", "  |", "  |"));
     }};
 
     private static final Integer[] lineNumbers = {0, 1, 2};
@@ -18,7 +18,7 @@ public class Lcd {
      * Accept only and integer, so we're sure that from here we have only valid input
      */
     public String displayDigitList(PositiveInteger number) {
-        char[] inputChars = String.valueOf(number).toCharArray();
+        NonEmptyList<CharZeroToNine> inputChars = number.asDigits();
         List<Digit> digits = getDigitsFormChars(inputChars);
         return displayDigitList(digits);
     }
@@ -26,9 +26,9 @@ public class Lcd {
     /**
      * switch to domain objects (instead of primitives ASAP
      */
-    private List<Digit> getDigitsFormChars(char[] inputChars) {
+    protected List<Digit> getDigitsFormChars(NonEmptyList<CharZeroToNine> inputChars) {
         List<Digit> digits = new ArrayList<>();
-        for (char charDigit : inputChars) {
+        for (CharZeroToNine charDigit : inputChars) {
             digits.add(possibleDigits.get(charDigit));
         }
         return digits;
