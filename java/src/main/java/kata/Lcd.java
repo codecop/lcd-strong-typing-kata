@@ -17,7 +17,7 @@ public class Lcd {
     /**
      * Accept only and integer, so we're sure that from here we have only valid input
      */
-    public String displayDigitList(int number) {
+    public String displayDigitList(PositiveInteger number) {
         char[] inputChars = String.valueOf(number).toCharArray();
         List<Digit> digits = getDigitsFormChars(inputChars);
         return displayDigitList(digits);
