@@ -1,6 +1,9 @@
 package kata;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Lcd {
 
@@ -11,7 +14,7 @@ public class Lcd {
         put(CharZeroToNine._7, new Digit(" _ ", "  |", "  |"));
     }};
 
-    private static final Integer[] lineNumbers = {0, 1, 2};
+    private static final Integer[] lineNumbers = { 0, 1, 2 };
     private static final String NL = "\n";
 
     /**
@@ -44,6 +47,5 @@ public class Lcd {
         }
         return s.toString();
     }
-
 
 }

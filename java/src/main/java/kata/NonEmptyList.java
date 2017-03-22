@@ -6,20 +6,20 @@ import java.util.List;
 
 public class NonEmptyList<T> implements Iterable<T> {
 
-  private List<T> nonEmptyList = new ArrayList<T>();
+    private List<T> nonEmptyList = new ArrayList<>();
 
-  public NonEmptyList(T first) {
-    add(first);
-  }
+    public NonEmptyList(T first) {
+        add(first);
+    }
 
-  @Override
-  public Iterator<T> iterator() {
-    return nonEmptyList.iterator();
-  }
+    @Override
+    public Iterator<T> iterator() {
+        return nonEmptyList.iterator();
+    }
 
-  public NonEmptyList<T> add(T valueOf) {
-    nonEmptyList.add(valueOf);
-    return this;
-  }
+    public NonEmptyList<T> add(T valueOf) {
+        nonEmptyList.add(valueOf);
+        return this;
+    }
 
 }

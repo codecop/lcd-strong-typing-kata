@@ -48,10 +48,8 @@ public enum PositiveInteger {
 
   private NonEmptyList<CharZeroToNine> digits;
 
-  PositiveInteger(NonEmptyList<CharZeroToNine> digits)
-  {
+  PositiveInteger(NonEmptyList<CharZeroToNine> digits) {
     this.digits = digits;
-    
   }
 
   public NonEmptyList<CharZeroToNine> asDigits() {
@@ -77,4 +75,5 @@ public enum PositiveInteger {
 //  private CharZeroToNine convert(/* c must be 0 to 9 */ char c) {
 //    return CharZeroToNine.valueOf("_" + c);
 //  }
+
 }

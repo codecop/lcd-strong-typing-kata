@@ -1,7 +1,5 @@
 package kata;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-
 import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
@@ -58,4 +56,5 @@ public class LcdTest {
             "  |" + "  |" + " _|" + NL +
             "  |" + "  |" + "|_ " + NL );
     }
+
 }
